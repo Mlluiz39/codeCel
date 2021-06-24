@@ -12,23 +12,19 @@
 <body>
  
   <div class="container">
-     <header>Todo list</header>
-    <div class="inputField">
-    <input type="text" placeholder="digite sua tarefa" />
-     <button><i class="fas fa-plus"></i></button>
+      <header>Todo list</header>
+      <div class="inputField">
+      <input type="text" data-js="inputField" placeholder="digite sua tarefa" />
+       <button><i class="fas fa-plus"></i></button>
+        </div>
+      <ul class="todoList" data-js="todoList"></ul>
+      <div class="footer">
+        <span  data-js="footer">Você tem tarefas pendentes</span>
+        <button>Limpar tudo</button>
       </div>
-  
-    <ul class="todoList">
-      <li>comprar pão<span><i class="fas fa-trash"></i></span></li>
-      <li>Fazer academia<span><i class="fas fa-trash"></i></span></li>
-    </ul>
-    <div class="footer">
-      <span>Você tem 2 tarefas pendentes</span>
-      <button>Limpar tudo</button>
-    </div>
-  </div>
+     </div>
  
-
+<script src="app.js"></script>
 </body>
 
 </html>
