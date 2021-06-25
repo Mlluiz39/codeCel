@@ -2,7 +2,7 @@ const inputElement = document.querySelector('[data-js="input"]');
 const buttonElement = document.querySelector('[data-js="button"]');
 const todoListElement = document.querySelector('[data-js="todoList"]');
 const footerElement = document.querySelector('[data-js="footer"]');
-const deleteAllTasks = document.querySelector('[data-js="deleteTasks"]')
+const deleteAllTasks = document.querySelector('[data-js="deleteTasks"]');
 
 inputElement.addEventListener('keyup', () => {
   const userData = inputElement.value;
@@ -37,16 +37,16 @@ function showTasks() {
   }
 
   if (listArray.length <= 0) {
-    footerElement.textContent = `Você  naõ tem tarefas pendente`;
-  }else if (listArray.length === 1) {
+    footerElement.textContent = `Você naõ tem tarefas pendente`;
+  } else if (listArray.length === 1) {
     footerElement.textContent = `Você tem ${listArray.length} tarefa pendente`;
   } else {
     footerElement.textContent = `Você tem ${listArray.length} tarefas pendentes`;
 
     if (listArray.length > 0) {
-      deleteAllTasks.classList.add('active')
-    }else {
-      deleteAllTasks.classList.remove('active')
+      deleteAllTasks.classList.add('active');
+    } else {
+      deleteAllTasks.classList.remove('active');
     }
   }
 
@@ -69,7 +69,7 @@ function deleteTasks(index) {
 }
 
 deleteAllTasks.addEventListener('click', () => {
-  listArray = []
+  listArray = [];
   localStorage.setItem('New Todo', JSON.stringify(listArray));
   showTasks();
-})
+});

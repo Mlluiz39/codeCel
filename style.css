@@ -7,16 +7,16 @@
 body {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(to bottom, #68eacc 0%, #497be8 100%)
+  background: linear-gradient(to bottom, #68eacc 0%, #497be8 100%);
 }
 
 .container {
- margin: 120px auto;
- max-width: 400px;
- width: 100%;
- background-color: #fff;
- border-radius: 5px;
- padding: 25px;
+  margin: 120px auto;
+  max-width: 400px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 25px;
 }
 
 .container header {
@@ -49,7 +49,7 @@ body {
   border-radius: 0 3px 3px 0;
   outline: none;
   background-color: steelblue;
-  font-size:22px;
+  font-size: 22px;
   color: #fff;
   cursor: pointer;
   border: none;
@@ -111,7 +111,7 @@ body {
   border: none;
   outline: none;
   background-color: red;
-  font-size:14px;
+  font-size: 14px;
   color: #fff;
   cursor: pointer;
   border-radius: 3px;
@@ -124,4 +124,3 @@ body {
   opacity: 1;
   pointer-events: auto;
 }
-
