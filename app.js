@@ -1,8 +1,15 @@
 const inputElement = document.querySelector('[data-js="input"]');
+let inputDateElement = document.querySelector('#date')
 const buttonElement = document.querySelector('[data-js="button"]');
 const todoListElement = document.querySelector('[data-js="todoList"]');
 const footerElement = document.querySelector('[data-js="footer"]');
 const deleteAllTasks = document.querySelector('[data-js="deleteTasks"]');
+
+let today = new Date()
+options = {weekday: "long", month: "short", day: "numeric"}
+inputDateElement = today.toLocaleDateString("pt-br", options)
+taskDate = inputDateElement
+taskDate.innerHTML = today.toLocaleDateString("pt-br", options)
 
 inputElement.addEventListener('keyup', () => {
   const userData = inputElement.value;
@@ -16,7 +23,7 @@ showTasks();
 
 buttonElement.addEventListener('click', () => {
   let userData = inputElement.value;
-
+ 
   let getLocalStorage = localStorage.getItem('New Todo');
   if (getLocalStorage === null) {
     listArray = [];
@@ -52,7 +59,7 @@ function showTasks() {
 
   let newLiElement = '';
   listArray.forEach((element, index) => {
-    newLiElement += `<li>${element}<span onclick="deleteTasks(${index})"><i class="fas fa-trash"></i></span></li>`;
+    newLiElement += `<li>${element} | ${taskDate}<span onclick="deleteTasks(${index})"><i class="fas fa-trash"></i></span></li>`;
   });
 
   todoListElement.innerHTML = newLiElement;
