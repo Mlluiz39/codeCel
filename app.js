@@ -44,7 +44,7 @@ function showTasks() {
   }
 
   if (listArray.length <= 0) {
-    footerElement.textContent = `Você naõ tem tarefas pendente`;
+    footerElement.textContent = `Você não tem tarefas pendente`;
   } else if (listArray.length === 1) {
     footerElement.textContent = `Você tem ${listArray.length} tarefa pendente`;
   } else {
