@@ -9,7 +9,6 @@ let today = new Date()
 options = {weekday: "long", month: "short", day: "numeric"}
 inputDateElement = today.toLocaleDateString("pt-br", options)
 taskDate = inputDateElement
-taskDate.innerHTML = today.toLocaleDateString("pt-br", options)
 
 inputElement.addEventListener('keyup', () => {
   const userData = inputElement.value;
