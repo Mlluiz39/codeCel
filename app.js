@@ -7,7 +7,7 @@ const deleteAllTasks = document.querySelector('[data-js="deleteTasks"]');
 
 let today = new Date()
 options = {weekday: "long", month: "short", day: "numeric"}
-inputDateElement = today.toLocaleDateString("pt-br", options)
+inputDateElement = today.toLocaleString()
 taskDate = inputDateElement
 
 inputElement.addEventListener('keyup', () => {
