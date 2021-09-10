@@ -1,27 +1,27 @@
-const inputElement = document.querySelector('[data-js="input"]');
-let inputDateElement = document.querySelector('#date')
-const buttonElement = document.querySelector('[data-js="button"]');
-const todoListElement = document.querySelector('[data-js="todoList"]');
-const footerElement = document.querySelector('[data-js="footer"]');
+const input = document.querySelector('[data-js="input"]');
+let inputDate = document.querySelector('#date')
+const button = document.querySelector('[data-js="button"]');
+const todoList = document.querySelector('[data-js="todoList"]');
+const footer = document.querySelector('[data-js="footer"]');
 const deleteAllTasks = document.querySelector('[data-js="deleteTasks"]');
 
 let today = new Date()
 options = {weekday: "long", month: "short", day: "numeric"}
-inputDateElement = today.toLocaleString()
-taskDate = inputDateElement
+inputDate = today.toLocaleString()
+taskDate = inputDate
 
-inputElement.addEventListener('keyup', () => {
-  const userData = inputElement.value;
+input.addEventListener('keyup', () => {
+  const userData = input.value.trim();
   if (userData) {
-    buttonElement.classList.add('active');
+    button.classList.add('active');
   } else {
-    buttonElement.classList.remove('active');
+    button.classList.remove('active');
   }
 });
 showTasks();
 
-buttonElement.addEventListener('click', () => {
-  let userData = inputElement.value;
+button.addEventListener('click', () => {
+  let userData = input.value.trim();
  
   let getLocalStorage = localStorage.getItem('New Todo');
   if (getLocalStorage === null) {
@@ -43,11 +43,11 @@ function showTasks() {
   }
 
   if (listArray.length <= 0) {
-    footerElement.textContent = `Você não tem tarefas pendente`;
+    footer.textContent = `Você não tem tarefas pendente`;
   } else if (listArray.length === 1) {
-    footerElement.textContent = `Você tem ${listArray.length} tarefa pendente`;
+    footer.textContent = `Você tem ${listArray.length} tarefa pendente`;
   } else {
-    footerElement.textContent = `Você tem ${listArray.length} tarefas pendentes`;
+    footer.textContent = `Você tem ${listArray.length} tarefas pendentes`;
 
     if (listArray.length > 0) {
       deleteAllTasks.classList.add('active');
@@ -61,9 +61,9 @@ function showTasks() {
     newLiElement += `<li>${element} | ${taskDate}<span onclick="deleteTasks(${index})"><i class="fas fa-trash"></i></span></li>`;
   });
 
-  todoListElement.innerHTML = newLiElement;
-  inputElement.value = '';
-  buttonElement.classList.remove('active');
+  todoList.innerHTML = newLiElement;
+  input.value = '';
+  button.classList.remove('active');
 }
 
 function deleteTasks(index) {
