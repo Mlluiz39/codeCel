@@ -6,9 +6,9 @@ const footer = document.querySelector('[data-js="footer"]');
 const deleteAllTasks = document.querySelector('[data-js="deleteTasks"]');
 
 let today = new Date()
-options = {weekday: "long", month: "short", day: "numeric"}
-inputDate = today.toLocaleString()
-taskDate = inputDate
+let options = {weekday: "long", month: "short", day: "numeric"}
+let inputDate = today.toLocaleString()
+let taskDate = inputDate
 
 input.addEventListener('keyup', () => {
   const userData = input.value.trim();
